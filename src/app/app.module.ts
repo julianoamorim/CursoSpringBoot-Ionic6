@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http' //nao importou automaticam
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InboxModule } from './folder/components/inbox/inbox.module';
+import { ErrorInterceptorProvider } from 'src/interceptors/error-interceptor';
 
 @NgModule({
   declarations: [AppComponent], //nao e declarada todas as paginas -> LazyLoading
@@ -22,7 +23,8 @@ import { InboxModule } from './folder/components/inbox/inbox.module';
   //servicos que sao declarados globalmente  
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    CategoriaService
+    CategoriaService,
+    ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent],
 })

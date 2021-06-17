@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InboxModule } from './folder/components/inbox/inbox.module';
 import { ErrorInterceptorProvider } from 'src/interceptors/error-interceptor';
+import { AuthService } from 'src/services/auth.service';
+import { StorageService } from 'src/services/storage.service';
 
 @NgModule({
   declarations: [AppComponent], //nao e declarada todas as paginas -> LazyLoading
@@ -24,7 +26,9 @@ import { ErrorInterceptorProvider } from 'src/interceptors/error-interceptor';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     CategoriaService,
-    ErrorInterceptorProvider
+    ErrorInterceptorProvider,
+    AuthService,
+    StorageService
   ],
   bootstrap: [AppComponent],
 })

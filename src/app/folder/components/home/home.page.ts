@@ -1,3 +1,4 @@
+import { CredenciaisDTO } from './../../../../models/credenciais.dto';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular'; //controle de navegacao
 
@@ -7,6 +8,12 @@ import { MenuController, NavController } from '@ionic/angular'; //controle de na
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
+  //inicializa as credenciais
+  creds: CredenciaisDTO = {
+    email: "",
+    senha: ""
+  }
 
   constructor(public navCtrl: NavController, public menu: MenuController) {
 
@@ -21,6 +28,7 @@ export class HomePage implements OnInit {
     }
 
   login(){
+    console.log(this.creds)
     //this.navCtrl.navigateForward('folder/components/categorias') //permite voltar para essa pagina
     this.navCtrl.navigateRoot('folder/components/categorias'); //navega da home para categoria
   }

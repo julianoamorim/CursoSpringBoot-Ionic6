@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/']">
+      <ion-icon  name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-thumbnail>
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-thumbnail>
+  
+  <ion-item *ngFor="let categoria of categorias">
+    <ion-thumbnail slot="start">
+      <img src="{{bucketUrl}}/cat{{categoria.id}}.jpg">
+    </ion-thumbnail>
+    <ion-label>{{categoria.nome}}</ion-label>
+  </ion-item>
+</ion-content>

@@ -1,11 +1,10 @@
-<ion-header>
+<!-- Barra superiro do Menu -->
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-button [routerLink]="['/']">
-      <ion-icon  name="arrow-back"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-title>Categorias</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
 </ion-header>
 

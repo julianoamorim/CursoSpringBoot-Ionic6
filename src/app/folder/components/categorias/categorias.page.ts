@@ -8,7 +8,7 @@ import { NavController, NavParams } from '@ionic/angular';
   selector: 'app-categorias',
   templateUrl: './categorias.page.html',
   styleUrls: ['./categorias.page.scss'],
-  providers: [NavParams] //tem q colocar pra funcionar
+  providers: [NavParams] //tem q colocar para carregar a pagina
 })
 export class CategoriasPage implements OnInit {
 

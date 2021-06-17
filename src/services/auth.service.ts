@@ -4,10 +4,13 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { CredenciaisDTO } from 'src/models/credenciais.dto';
 import { StorageService } from './storage.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 //Funcao de Autenticacao das credenciais fornecidas no Frontend para o Backend
 @Injectable()
 export class AuthService{
+
+    jwtHelper : JwtHelperService = new JwtHelperService(); //biblioteca que obtem o email atravez do token no frontend -> necessario instalar npm
 
     constructor(public http: HttpClient, public storage: StorageService){
 
@@ -23,9 +26,10 @@ export class AuthService{
     }
 
     sucessoLogin(autorizacaoValor: string){
-        let token1 = autorizacaoValor.substring(7) //Retirar o "Barrier " do token
+        let toke = autorizacaoValor.substring(7) //Retirar o "Barrier " do token
         let user : LocalUser = {
-            token: token1
+            token: toke,
+            email: this.jwtHelper.decodeToken(toke).sub
         }
         this.storage.setLocalUser(user) //salva o usuario no localStorage do brownser
     }

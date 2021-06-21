@@ -8,6 +8,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  {{email}}
+<ion-content>
+  <img [src]="cliente?.imageUrl || 'assets/imgs/avatar-blank.png'" class="circle">
+  <h2 style="text-align: center">{{cliente?.nome}}</h2> <!-- ?:operador de navegacao segura, nao da erro caso n exista -->
+  <p style="text-align: center">{{cliente?.email}}</p>
 </ion-content>

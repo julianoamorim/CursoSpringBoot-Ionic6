@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { CidadeService } from 'src/services/domain/cidade.service';
+import { EstadoService } from 'src/services/domain/estado.service';
+import { EstadoDTO } from 'src/models/estado.dto';
+import { CidadeDTO } from 'src/models/cidade.dto';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-signup',
@@ -11,11 +16,15 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class SignupPage implements OnInit {
 
   grupoFormulario: FormGroup;
+  estados: EstadoDTO[];
+  cidades: CidadeDTO[];
 
   constructor(
     public navParam: NavParams,
     public navCtrl: NavController,
-    public formBuilder: FormBuilder) { 
+    public formBuilder: FormBuilder,
+    public cidadeService: CidadeService,
+    public estadoService: EstadoService) { 
 
     this.grupoFormulario = this.formBuilder.group({
       nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]], //valor inicial, valores validos
@@ -37,6 +46,21 @@ export class SignupPage implements OnInit {
   }
 
   ngOnInit() {
+    this.estadoService.encontrarTodos()
+    .subscribe(resposta => {
+      this.estados = resposta;
+      this.grupoFormulario.controls.estadoId.setValue(this.estados[0].id) //pega o primeiro estado da lista
+      this.updateCidades(); //busca as cidades do estado selecionado
+    }, error =>{})
+  }
+
+  updateCidades(){
+    let estado_id = this.grupoFormulario.value.estadoId;
+    this.cidadeService.encontrarTodos(estado_id)
+    .subscribe(response => {
+      this.cidades = response;
+      this.grupoFormulario.controls.cidadeId.setValue(null); //tira a seleçao da caixa da cidade selecionada
+    }, error =>{})
   }
 
   signupUser(){

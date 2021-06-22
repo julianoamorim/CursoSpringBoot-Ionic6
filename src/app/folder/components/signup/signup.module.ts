@@ -8,6 +8,8 @@ import { SignupPageRoutingModule } from './signup-routing.module';
 
 import { SignupPage } from './signup.page';
 import { HomePageRoutingModule } from '../home/home-routing.module';
+import { CidadeService } from 'src/services/domain/cidade.service';
+import { EstadoService } from 'src/services/domain/estado.service';
 
 @NgModule({
   imports: [
@@ -19,6 +21,10 @@ import { HomePageRoutingModule } from '../home/home-routing.module';
     HomePageRoutingModule,
     FormsModule,
   ],
-  declarations: [SignupPage]
+  declarations: [SignupPage],
+  providers: [
+    CidadeService,
+    EstadoService
+  ]
 })
 export class SignupPageModule {}

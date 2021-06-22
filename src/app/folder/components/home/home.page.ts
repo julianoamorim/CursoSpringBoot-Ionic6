@@ -28,6 +28,15 @@ export class HomePage implements OnInit {
     this.menu.enable(true);
     }
 
+    ionViewDidEnter(){
+      this.auth.recarrecarToken()
+      .subscribe(resposta => {
+        this.auth.sucessoLogin(resposta.headers.get('Authorization')); //consegue pegar o token pelo header no backend no arquivo JWTFiltroAutenticacao
+        this.navCtrl.navigateRoot('folder/components/categorias'); //navega da home para categoria
+      },
+      error => {});
+    }
+
   login(){
     this.auth.autenticado(this.creds)
     .subscribe(resposta => {

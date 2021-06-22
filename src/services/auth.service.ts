@@ -25,6 +25,15 @@ export class AuthService{
         });
     }
 
+    recarrecarToken(){ 
+        return this.http.post(`${API_CONFIG.baseUrl}/auth/refresh_token`,
+        {},
+        {
+            observe: 'response', //obtem acesso ao header
+            responseType: 'text' //evitar q exporte como JSON para o Spring
+        });
+    }
+
     sucessoLogin(autorizacaoValor: string){
         let toke = autorizacaoValor.substring(7) //Retirar o "Barrier " do token
         let user : LocalUser = {

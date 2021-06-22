@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable} from "rxjs"; //Esse modulo nao consegue pegar o error http da requisicao
 import { API_CONFIG } from "src/config/api.config";
 import { ClienteDTO } from "src/models/cliente.dto";
 import { StorageService } from "../storage.service";

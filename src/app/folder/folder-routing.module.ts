@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InboxComponent } from './components/inbox/inbox.component';
 import { FolderPage } from './folder.page';
 
 
@@ -21,7 +20,12 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./components/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./components/signup/signup.module').then( m => m.SignupPageModule)
   }
+
 ];
 
 @NgModule({

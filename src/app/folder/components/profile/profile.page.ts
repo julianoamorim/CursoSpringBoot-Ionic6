@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
-import { Observable} from 'rxjs';
 import { API_CONFIG } from 'src/config/api.config';
 import { ClienteDTO } from 'src/models/cliente.dto';
 import { ClienteService } from 'src/services/domain/cliente.service';

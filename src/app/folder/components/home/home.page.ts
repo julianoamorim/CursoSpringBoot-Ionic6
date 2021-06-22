@@ -48,6 +48,10 @@ export class HomePage implements OnInit {
     //this.navCtrl.navigateForward('folder/components/categorias') //permite voltar para essa pagina
   }
 
+  signup(){
+    this.navCtrl.navigateRoot('folder/components/signup');
+  }
+
   ngOnInit() {
   }
 

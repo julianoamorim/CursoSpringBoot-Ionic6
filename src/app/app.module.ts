@@ -13,6 +13,7 @@ import { AuthService } from 'src/services/auth.service';
 import { StorageService } from 'src/services/storage.service';
 import { ClienteService } from 'src/services/domain/cliente.service';
 import { AuthInterceptorProvider } from 'src/interceptors/auth-interceptor';
+import { ProdutoService } from 'src/services/domain/produto.service';
 
 @NgModule({
   declarations: [AppComponent], //nao e declarada todas as paginas -> LazyLoading
@@ -32,7 +33,8 @@ import { AuthInterceptorProvider } from 'src/interceptors/auth-interceptor';
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
     StorageService,
-    ClienteService
+    ClienteService,
+    ProdutoService
   ],
   bootstrap: [AppComponent],
 })

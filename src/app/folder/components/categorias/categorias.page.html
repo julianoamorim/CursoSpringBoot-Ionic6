@@ -4,19 +4,15 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Categorias</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-thumbnail>
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-  </ion-thumbnail>
-  
-  <ion-item *ngFor="let categoria of categorias">
+  <ion-item *ngFor="let item of items" (click)="mostrarProdutos(item.id)">
     <ion-thumbnail slot="start">
-      <img src="{{bucketUrl}}/cat{{categoria.id}}.jpg">
+      <img src="{{bucketUrl}}/cat{{item.id}}.jpg">
     </ion-thumbnail>
-    <ion-label>{{categoria.nome}}</ion-label>
+    <ion-label>{{item.nome}}</ion-label>
   </ion-item>
 </ion-content>

@@ -2,14 +2,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-icon name="arrow-back-circle-sharp" (click)="voltar()"></ion-icon>
+      <ion-back-button defaultHref="categorias"></ion-back-button> <!-- botao de voltar, colocar a referencia da pagina --> 
     </ion-buttons>
     <ion-title>Produtos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let item of items">
+  <ion-item *ngFor="let item of items" (click)="mostrarDetalhe(item.id)">
     <ion-thumbnail slot="start">
       <img [src]="item.imageUrl || 'assets/imgs/prod.jpg'">
     </ion-thumbnail>

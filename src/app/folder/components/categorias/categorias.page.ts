@@ -8,8 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.page.html',
-  styleUrls: ['./categorias.page.scss'],
-  providers: [NavParams] //tem q colocar para carregar a pagina
+  styleUrls: ['./categorias.page.scss']
 })
 export class CategoriasPage implements OnInit {
 

@@ -5,14 +5,12 @@ import { CidadeService } from 'src/services/domain/cidade.service';
 import { EstadoService } from 'src/services/domain/estado.service';
 import { EstadoDTO } from 'src/models/estado.dto';
 import { CidadeDTO } from 'src/models/cidade.dto';
-import { error } from 'protractor';
 import { ClienteService } from 'src/services/domain/cliente.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
-  providers: [NavParams] //tem q colocar para carregar a pagina
+  styleUrls: ['./signup.page.scss']
 })
 export class SignupPage implements OnInit {
 

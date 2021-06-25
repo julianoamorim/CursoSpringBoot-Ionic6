@@ -14,6 +14,7 @@ import { StorageService } from 'src/services/storage.service';
 import { ClienteService } from 'src/services/domain/cliente.service';
 import { AuthInterceptorProvider } from 'src/interceptors/auth-interceptor';
 import { ProdutoService } from 'src/services/domain/produto.service';
+import { CartService } from 'src/services/domain/cart.service';
 
 @NgModule({
   declarations: [AppComponent], //nao e declarada todas as paginas -> LazyLoading
@@ -30,11 +31,13 @@ import { ProdutoService } from 'src/services/domain/produto.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     CategoriaService,
     AuthService,
+    NavParams, //necessario para navegar entre as paginas
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
     StorageService,
     ClienteService,
-    ProdutoService
+    ProdutoService,
+    CartService
   ],
   bootstrap: [AppComponent],
 })

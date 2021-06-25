@@ -8,8 +8,7 @@ import { StorageService } from 'src/services/storage.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
-  providers: [NavParams] //tem q colocar para carregar a pagina
+  styleUrls: ['./profile.page.scss']
 })
 export class ProfilePage implements OnInit {
 

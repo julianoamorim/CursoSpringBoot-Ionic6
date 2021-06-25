@@ -3,13 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
 import { ProdutoDTO } from 'src/models/produto.dto';
+import { CartService } from 'src/services/domain/cart.service';
 import { ProdutoService } from 'src/services/domain/produto.service';
 
 @Component({
   selector: 'app-produto-detalhado',
   templateUrl: './produto-detalhado.page.html',
-  styleUrls: ['./produto-detalhado.page.scss'],
-  providers: [NavParams] //tem q colocar para carregar a pagina
+  styleUrls: ['./produto-detalhado.page.scss']
 })
 export class ProdutoDetalhadoPage implements OnInit {
 
@@ -18,6 +18,7 @@ export class ProdutoDetalhadoPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public cartService: CartService,
     public produtoService: ProdutoService,
     public activateRoute: ActivatedRoute,
     public router: Router,
@@ -44,6 +45,11 @@ export class ProdutoDetalhadoPage implements OnInit {
       this.item.imageUrl = `${API_CONFIG.bucketAWSUrl}/prod${this.item.id}.jpg`;
     },
     error => {});
+  }
+
+  adicionarAoCarrinho(produto: ProdutoDTO){
+    this.cartService.addProduto(produto);
+    this.navCtrl.navigateRoot('folder/components/carrinho');
   }
 
 

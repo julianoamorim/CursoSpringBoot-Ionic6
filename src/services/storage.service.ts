@@ -27,22 +27,23 @@ export class StorageService{
         }
     }  
 
-    getCart(): Cart{
-        let user = localStorage.getItem(STORAGE_KEYS.cart);
-        if(user == null){
-            return null
+    //Por que é assim? Volter depois para entender
+    getCart() : Cart {
+        let str = localStorage.getItem(STORAGE_KEYS.cart);
+        if (str != null) {
+            return JSON.parse(str);
         }
-        else{
-            return JSON.parse(user);
+        else {
+            return null;
         }
     }
-
-    setCart(obj: Cart){
-        if(obj == null){
-            localStorage.removeItem(STORAGE_KEYS.cart) 
+    
+    setCart(obj : Cart) {
+        if (obj != null) {
+            localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(obj));
+        } 
+        else {
+            localStorage.removeItem(STORAGE_KEYS.cart);
         }
-        else{
-            localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj))
-        }
-    }  
+    }
 }

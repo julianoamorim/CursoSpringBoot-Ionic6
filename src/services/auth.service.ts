@@ -1,3 +1,4 @@
+import { CartService } from 'src/services/domain/cart.service';
 import { LocalUser } from 'src/models/local_user';
 import { API_CONFIG } from './../config/api.config';
 import { Injectable } from "@angular/core";
@@ -12,9 +13,10 @@ export class AuthService{
 
     jwtHelper : JwtHelperService = new JwtHelperService(); //biblioteca que obtem o email atravez do token no frontend -> necessario instalar npm
 
-    constructor(public http: HttpClient, public storage: StorageService){
-
-    }
+    constructor(
+        public http: HttpClient,
+        public storage: StorageService,
+        public cartService: CartService){ }
 
     autenticado(creds: CredenciaisDTO){
         return this.http.post(`${API_CONFIG.baseUrl}/login`,
@@ -41,6 +43,7 @@ export class AuthService{
             email: this.jwtHelper.decodeToken(toke).sub
         }
         this.storage.setLocalUser(user) //salva o usuario no localStorage do brownser
+        this.cartService.criarOuLimparCarrinho(); //limpa o carrinho em um novo Login
     }
 
     logout(){

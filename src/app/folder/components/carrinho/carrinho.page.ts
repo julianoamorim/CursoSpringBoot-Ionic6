@@ -1,3 +1,4 @@
+import { ProdutoDTO } from 'src/models/produto.dto';
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
@@ -12,7 +13,7 @@ import { ProdutoService } from 'src/services/domain/produto.service';
 })
 export class CarrinhoPage implements OnInit {
 
-  items : CartItem[];
+  items : CartItem[]=[];
 
   constructor(
     public navCtrl: NavController,
@@ -22,10 +23,9 @@ export class CarrinhoPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    let cart = this.cartService.getCart(); //pega o carrinho de compras ou cria um
-    this.items = cart.itens //NAO TA PEGANDO O ITEM, TA VINDO UM ARRAY VAZIO
+    let cart = this.cartService.getCart(); //pega o carrinho de compras ou cria um novo
+    this.items = cart.itens 
     this.carregarImagemUrls();
-    console.log(this.items)
   }
 
   carregarImagemUrls() {
@@ -37,6 +37,28 @@ export class CarrinhoPage implements OnInit {
         },
         error => {});
     }
+  }
+
+  //Metodos que repassam a chamada para o cart.servise.ts
+
+  removerItem(produto: ProdutoDTO){
+    this.items = this.cartService.removeProduto(produto).itens;
+  }
+
+  aumentarQuantidade(produto: ProdutoDTO){
+    this.items = this.cartService.increaseQuantity(produto).itens;
+  }
+
+  diminuirQuantidade(produto: ProdutoDTO){
+    this.items = this.cartService.decreaseQuantity(produto).itens;
+  }
+
+  total(){
+    return this.cartService.total();
+  }
+
+  continuarComprando(){
+    this.navCtrl.navigateRoot('/folder/components/categorias');
   }
 
 }

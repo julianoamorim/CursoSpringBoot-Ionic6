@@ -1,0 +1,24 @@
+<!-- Barra superiro do Menu -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="carrinho"></ion-back-button> <!-- botao de voltar, colocar a referencia da pagina --> 
+    </ion-buttons>
+    <ion-title>Fechamento de Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-list-header>
+        <h2>Selecione um endereço</h2>  
+      </ion-list-header>
+      <ion-item button *ngFor="let item of items">
+          <ion-label>
+            <h2>{{item.logradouro}}, {{item.numero}}</h2>
+            <p>{{item.complemento}} {{item.bairro}} CEP {{item.cep}}</p>
+            <p>{{item.cidade.nome}}, {{item.cidade.estado.nome}}</p>
+          </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

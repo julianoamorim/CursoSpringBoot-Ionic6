@@ -14,7 +14,7 @@ export class AppComponent {
     { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     { title: 'Logout', url: '/folder/components/home', icon: 'log-out'},
     { title: 'Categorias', url: '/folder/components/categorias', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
+    { title: 'Carrinho', url: '/folder/components/carrinho', icon: "cart" },
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

@@ -8,7 +8,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon routerLink="/folder/components/carrinho" name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-card >
     <img [src]="item?.imageUrl || 'assets/imgs/prod.jpg'"/>
     <ion-card-content>

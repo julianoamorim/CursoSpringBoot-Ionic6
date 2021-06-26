@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'carrinho',
     loadChildren: () => import('./components/carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
+  },
+  {
+    path: 'escolher-endereco',
+    loadChildren: () => import('./components/escolher-endereco/escolher-endereco.module').then( m => m.EscolherEnderecoPageModule)
   }
 
 

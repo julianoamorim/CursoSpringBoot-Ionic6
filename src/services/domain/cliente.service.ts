@@ -12,9 +12,9 @@ export class ClienteService{
 
     }
 
-    encontrarPorEmail(email: string): Observable<ClienteDTO>{
+    encontrarPorEmail(email: string) {
 
-        return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`); //pega a url do backend para acessar o login -> Classe ClienteResource.java
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`); //pega a url do backend para acessar o login -> Classe ClienteResource.java
     }
 
     buscarImagemBucket(id : string) : Observable<any> {

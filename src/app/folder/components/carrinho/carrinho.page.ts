@@ -61,4 +61,8 @@ export class CarrinhoPage implements OnInit {
     this.navCtrl.navigateRoot('/folder/components/categorias');
   }
 
+  finalizarCompra(){
+    this.navCtrl.navigateRoot('/folder/components/escolher-endereco');
+  }
+
 }

@@ -9,6 +9,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon routerLink="/folder/components/carrinho" name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-item *ngFor="let item of items" (click)="mostrarProdutos(item.id)">
     <ion-thumbnail slot="start">
       <img src="{{bucketUrl}}/cat{{item.id}}.jpg">

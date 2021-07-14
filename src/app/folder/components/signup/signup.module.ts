@@ -14,12 +14,11 @@ import { EstadoService } from 'src/services/domain/estado.service';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, //modulo necessario para carregar o formulario da pagina
     IonicModule,
     SignupPageRoutingModule,
     ReactiveFormsModule, //modulo necessario para carregar o formulario da pagina
-    HomePageRoutingModule,
-    FormsModule,
+    HomePageRoutingModule
   ],
   declarations: [SignupPage],
   providers: [

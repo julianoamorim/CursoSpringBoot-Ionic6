@@ -17,7 +17,7 @@
       <ion-input formControlName="email" type="text"></ion-input>
     </ion-item>
     <p class="danger" *ngIf="grupoFormulario.controls.email.dirty && grupoFormulario.controls.email.errors" margin-left>Valor inválido</p>
-    <ion-list radio-group name="tipo">
+    <ion-list radio-group formControlName="tipo">
       <ion-list-header>
         Tipo de cliente
       </ion-list-header>

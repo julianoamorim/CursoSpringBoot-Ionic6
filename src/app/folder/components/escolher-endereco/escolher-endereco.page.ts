@@ -5,6 +5,7 @@ import { EnderecoDTO } from './../../../../models/endereco.dto';
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from '@ionic/angular';
 import { StorageService } from 'src/services/storage.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-escolher-endereco',
@@ -21,7 +22,9 @@ export class EscolherEnderecoPage implements OnInit {
     public navParams: NavParams,
     public storage: StorageService,
     public clienteService: ClienteService,
-    public cartService: CartService
+    public cartService: CartService,
+    public router: Router,
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -57,7 +60,8 @@ export class EscolherEnderecoPage implements OnInit {
 
   proximaPagina(item: EnderecoDTO){
     this.pedido.enderecoEntrega = {id: item.id}; //retorna o id do cliente, endereco, em vez o objeto completo
-    console.log(this.pedido);
+    let data = JSON.stringify(this.pedido);
+    this.router.navigate(['../pagamento',{data}], {relativeTo: this.route});
 
   }
 

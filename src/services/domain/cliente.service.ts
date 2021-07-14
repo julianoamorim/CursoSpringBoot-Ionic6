@@ -17,6 +17,11 @@ export class ClienteService{
         return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`); //pega a url do backend para acessar o login -> Classe ClienteResource.java
     }
 
+    encontrarPorId(id: string) {
+
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/${id}`); //pega a url do backend para acessar o login -> Classe ClienteResource.java
+    }
+
     buscarImagemBucket(id : string) : Observable<any> {
         let url = `${API_CONFIG.bucketAWSUrl}/cp${id}.jpg`
         return this.http.get(url, {responseType : 'blob'}); //busca a imagem do cliente no Amazon Web Service

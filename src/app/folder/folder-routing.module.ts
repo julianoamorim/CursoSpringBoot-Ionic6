@@ -39,6 +39,14 @@ const routes: Routes = [
   {
     path: 'escolher-endereco',
     loadChildren: () => import('./components/escolher-endereco/escolher-endereco.module').then( m => m.EscolherEnderecoPageModule)
+  },
+  {
+    path: 'pagamento',
+    loadChildren: () => import('./components/pagamento/pagamento.module').then( m => m.PagamentoPageModule)
+  },
+  {
+    path: 'confirmacao-pedido',
+    loadChildren: () => import('./components/confirmacao-pedido/confirmacao-pedido.module').then( m => m.ConfirmacaoPedidoPageModule)
   }
 
 

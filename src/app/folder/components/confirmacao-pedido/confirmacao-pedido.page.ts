@@ -20,6 +20,7 @@ export class ConfirmacaoPedidoPage implements OnInit {
   cartItems: CartItem[];
   cliente: ClienteDTO;
   endereco: EnderecoDTO;
+  codPedido: string;
 
   constructor(
     public navCtrl: NavController,
@@ -59,11 +60,15 @@ export class ConfirmacaoPedidoPage implements OnInit {
     this.navCtrl.navigateRoot('/folder/components/carrinho');
   }
 
-  finalizarCompra(){ //finaliza a compra
+  home(){
+    this.navCtrl.navigateRoot('/folder/components/categorias');
+  }
+
+  finalizarCompra(){ //checkout
     this.pedidoService.inserir(this.pedido)
     .subscribe(resposta => {
       this.cartService.criarOuLimparCarrinho() //limpa o carrinho, pois a compra foi fechada
-      console.log(resposta.headers.get('location'))
+      this.codPedido = this.encontrarId(resposta.headers.get('location')) //armazena o numero do Id da url do novo pedido salvo 
     },
     error => {
       console.log(error)
@@ -71,6 +76,11 @@ export class ConfirmacaoPedidoPage implements OnInit {
         this.navCtrl.navigateRoot('/folder/components/home');
       }
     })
+  }
+
+  private encontrarId(location: string): string{ //armazena o numero do Id da url do novo pedido salvo
+    let posicao = location.lastIndexOf('/'); //encontra a posicao da ultima barra
+    return location.substring(posicao + 1, location.length) //encontra a posicao depois da ultima barra
   }
 
 

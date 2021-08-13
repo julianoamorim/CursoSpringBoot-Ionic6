@@ -3,78 +3,97 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Confira Seu Pedido</ion-title>
+    <ion-title *ngIf = "codPedido">Pedido Registrado</ion-title>
+    <ion-title *ngIf = "!codPedido">Confira Seu Pedido</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Itens do pedido</ion-card-title>
-    </ion-card-header>
-
-    <ion-list>
-      <ion-item *ngFor="let item of cartItems">
-        <ion-thumbnail item-start>
-          <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'">
-        </ion-thumbnail>
-        <ion-label style="margin-left: 10px;">
-          <h2>{{item.produto.nome}}</h2>
-          <p style="float: right;">{{item.produto.preco * item.quantidade | currency}}</p>
-          <p>{{item.produto.preco | currency}}</p>
-          <p class="nolinebreak" style="margin-left: 20px;">{{item.quantidade}}</p>
-        </ion-label>
-      </ion-item> 
-
-      <ion-item>
-        <h2>Total</h2>
-        <h2 slot="end">{{total() | currency}}</h2>
-      </ion-item>
-    </ion-list> 
-  </ion-card>
-
-  <ion-card>
+  <div *ngIf = "!codPedido"> <!-- antes de confirmar a compra -->
+    <ion-card>
       <ion-card-header>
-        Cliente
+        <ion-card-title>Itens do pedido</ion-card-title>
       </ion-card-header>
+    
+      <ion-list>
+        <ion-item *ngFor="let item of cartItems">
+          <ion-thumbnail item-start>
+            <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'">
+          </ion-thumbnail>
+          <ion-label style="margin-left: 10px;">
+            <h2>{{item.produto.nome}}</h2>
+            <p style="float: right;">{{item.produto.preco * item.quantidade | currency}}</p>
+            <p>{{item.produto.preco | currency}}</p>
+            <p class="nolinebreak" style="margin-left: 20px;">{{item.quantidade}}</p>
+          </ion-label>
+        </ion-item> 
+    
+        <ion-item>
+          <h2>Total</h2>
+          <h2 slot="end">{{total() | currency}}</h2>
+        </ion-item>
+      </ion-list> 
+    </ion-card>
+    
+    <ion-card>
+        <ion-card-header>
+          Cliente
+        </ion-card-header>
+        <ion-item>
+          <ion-label>
+            <h2>{{cliente?.nome}}</h2>
+            <p>{{cliente?.email}}</p>
+          </ion-label>
+        </ion-item>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        Endereço de entrega
+      </ion-card-header>
+    
       <ion-item>
         <ion-label>
-          <h2>{{cliente?.nome}}</h2>
-          <p>{{cliente?.email}}</p>
+          <h2>{{endereco?.logradouro}}, {{endereco?.numero}}</h2>
+          <p>{{endereco?.complemento}} {{endereco?.bairro}} CEP {{endereco?.cep}}</p>
+          <p>{{endereco?.cidade.nome}}, {{endereco?.cidade.estado.nome}}</p>
         </ion-label>
       </ion-item>
-  </ion-card>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        Pagamento
+      </ion-card-header>
+    
+      <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComCartao'">
+        <ion-label>
+          <h3>Pagamento com cartão</h3>
+          <p>Parcelas: {{pedido.pagamento.numeroParcelas}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComBoleto'">
+        <h3>Pagamento com boleto</h3>
+      </ion-item>
+    </ion-card>
+    <ion-button expand="full" type="submit" (click)="finalizarCompra()">Confirmar Pedido</ion-button>
+    <ion-button expand="full" color="medium" (click)="voltar()">Voltar</ion-button>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      Endereço de entrega
-    </ion-card-header>
+  <div *ngIf="codPedido"> <!-- apos confirmar a compra -->
+    <ion-card>
+      <ion-list-header>
+        <h2>Seu pedido foi registrado !</h2>  
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          <h2>Código do pedido: {{codPedido}}</h2>
+          <p>Verifique seu email</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-button expand="full" color="medium" (click)="home()">Voltar</ion-button> <!-- volta p pagina de categorias -->
+  </div>
 
-    <ion-item>
-      <ion-label>
-        <h2>{{endereco?.logradouro}}, {{endereco?.numero}}</h2>
-        <p>{{endereco?.complemento}} {{endereco?.bairro}} CEP {{endereco?.cep}}</p>
-        <p>{{endereco?.cidade.nome}}, {{endereco?.cidade.estado.nome}}</p>
-      </ion-label>
-    </ion-item>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Pagamento
-    </ion-card-header>
-
-    <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComCartao'">
-      <ion-label>
-        <h3>Pagamento com cartão</h3>
-        <p>Parcelas: {{pedido.pagamento.numeroParcelas}}</p>
-      </ion-label>
-    </ion-item>
-    <ion-item *ngIf="pedido.pagamento['@type']=='pagamentoComBoleto'">
-      <h3>Pagamento com boleto</h3>
-    </ion-item>
-  </ion-card>
-  <ion-button expand="full" type="submit" (click)="finalizarCompra()">Confirmar Pedido</ion-button>
-  <ion-button expand="full" color="medium" (click)="voltar()">Voltar</ion-button>
 </ion-content>

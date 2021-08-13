@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NavController, NavParams } from '@ionic/angular';
+import { LoadingController, NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
 import { ProdutoDTO } from 'src/models/produto.dto';
 import { ProdutoService } from 'src/services/domain/produto.service';
@@ -21,16 +21,19 @@ export class ProdutosPage implements OnInit {
     public produtoService: ProdutoService,
     public activateRoute: ActivatedRoute,
     public router: Router,
-    public route: ActivatedRoute) { }
+    public route: ActivatedRoute,
+    public loadingCtrl: LoadingController) { }
 
   ngOnInit() {
 
     //Recebe os parametros de categoria.page para mostrar os produtos
     let categoria_id = this.activateRoute.snapshot.paramMap.get('data');
+    this.showLoader();
     console.log(this.produtoService.encontrarPorCategoria(categoria_id))
     this.produtoService.encontrarPorCategoria(categoria_id)
     .subscribe(response => {
-      this.items = response['content'];
+      this.items = response['content']; //carrega os dados da pagina anterior
+      this.stopLoader(); //retira a tela de loading apos carregar os dados da pagina anterior
       this.carregarImagemUrls();
     },
     error => {});
@@ -56,5 +59,18 @@ export class ProdutosPage implements OnInit {
     let data = JSON.stringify(produto_id);
     this.router.navigate(['../produto-detalhado',{data}],{relativeTo: this.route});
   }
+
+  //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
+  async  showLoader() {
+    const loading = await this.loadingCtrl.create({
+       message: 'Loading...',
+    });
+    await loading.present();
+ }
+ stopLoader() { //metodo para parar a tela de loading... Normalmente usada apos o metodo de carregar componentes externos
+    this.loadingCtrl.dismiss()
+    console.log('Dissmis Loading...')
+ }
+  
 
 }

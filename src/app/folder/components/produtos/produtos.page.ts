@@ -14,6 +14,7 @@ import { ProdutoService } from 'src/services/domain/produto.service';
 export class ProdutosPage implements OnInit {
 
   items: ProdutoDTO[];
+  loading: any;
 
   constructor(
     public navCtrl: NavController,
@@ -25,7 +26,13 @@ export class ProdutosPage implements OnInit {
     public loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+    this.carregarDados();
 
+    
+
+  }
+
+  carregarDados(){
     //Recebe os parametros de categoria.page para mostrar os produtos
     let categoria_id = this.activateRoute.snapshot.paramMap.get('data');
     this.showLoader();
@@ -33,11 +40,10 @@ export class ProdutosPage implements OnInit {
     this.produtoService.encontrarPorCategoria(categoria_id)
     .subscribe(response => {
       this.items = response['content']; //carrega os dados da pagina anterior
-      this.stopLoader(); //retira a tela de loading apos carregar os dados da pagina anterior
+      this.stopLoader() //retira a tela de loading apos carregar os dados da pagina anterior
       this.carregarImagemUrls();
     },
     error => {});
-
   }
 
   voltar(){
@@ -60,17 +66,28 @@ export class ProdutosPage implements OnInit {
     this.router.navigate(['../produto-detalhado',{data}],{relativeTo: this.route});
   }
 
-  //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
-  async  showLoader() {
+  async showLoader(){ //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
     const loading = await this.loadingCtrl.create({
-       message: 'Loading...',
+      cssClass: 'my-custom-class',
+      message: 'Aguarde...',
+      duration: 500
     });
     await loading.present();
- }
- stopLoader() { //metodo para parar a tela de loading... Normalmente usada apos o metodo de carregar componentes externos
-    this.loadingCtrl.dismiss()
-    console.log('Dissmis Loading...')
- }
+
+    const { role, data } = await loading.onDidDismiss();
+  }
+
+  stopLoader() { //metodo para parar a tela de loading... Normalmente usada apos o metodo de carregar componentes externos
+    //nao esta funcionando perfeitamente no IONIC 5
+  }
+
+
+  doRefresh(event) { //metodo para animacao qdo a pagina estiver carregando
+    this.carregarDados();
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
+  }
   
 
 }

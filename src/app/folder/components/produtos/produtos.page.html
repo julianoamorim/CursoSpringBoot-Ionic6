@@ -9,6 +9,11 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
   <ion-fab vertical="top" horizontal="end" edge slot="fixed">
     <ion-fab-button>
       <ion-icon routerLink="/folder/components/carrinho" name="cart"></ion-icon>

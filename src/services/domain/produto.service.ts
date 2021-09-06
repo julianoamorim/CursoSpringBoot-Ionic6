@@ -19,8 +19,8 @@ export class ProdutoService{
     }
 
     //Requisicao Assincrona -> Observable
-    encontrarPorCategoria(categoria_id: string){
-        return this.http.get(`${API_CONFIG.baseUrl}/produtos/?categorias=${categoria_id}`); //acesso ao BackEnd do SpringBoot
+    encontrarPorCategoria(categoria_id: string, page: number = 0, linesPerPage: number = 24 ){
+        return this.http.get(`${API_CONFIG.baseUrl}/produtos/?categorias=${categoria_id}&page=${page}&linesPerPage=${linesPerPage}`); //acesso ao BackEnd do SpringBoot
     }
 
     //Pega a imagem do produto no AWS

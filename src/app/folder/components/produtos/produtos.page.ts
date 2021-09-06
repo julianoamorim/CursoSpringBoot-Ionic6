@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
 import { ProdutoDTO } from 'src/models/produto.dto';
 import { ProdutoService } from 'src/services/domain/produto.service';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-produtos',
@@ -13,8 +14,11 @@ import { ProdutoService } from 'src/services/domain/produto.service';
 })
 export class ProdutosPage implements OnInit {
 
-  items: ProdutoDTO[];
+  page: number =0;
+
+  items: ProdutoDTO[] = [];
   loading: any;
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   constructor(
     public navCtrl: NavController,
@@ -36,12 +40,15 @@ export class ProdutosPage implements OnInit {
     //Recebe os parametros de categoria.page para mostrar os produtos
     let categoria_id = this.activateRoute.snapshot.paramMap.get('data');
     this.showLoader();
-    console.log(this.produtoService.encontrarPorCategoria(categoria_id))
-    this.produtoService.encontrarPorCategoria(categoria_id)
+    this.produtoService.encontrarPorCategoria(categoria_id, this.page, 10)  // busca os produtos de 10 em 10
     .subscribe(response => {
-      this.items = response['content']; //carrega os dados da pagina anterior
+      let inicio = this.items.length;
+      this.items = this.items.concat(response['content']); //carrega os dados da pagina anterior
       this.stopLoader() //retira a tela de loading apos carregar os dados da pagina anterior
-      this.carregarImagemUrls();
+      let fim = this.items.length - 1; //posicao final da lista
+      this.carregarImagemUrls(inicio, fim);
+      console.log(this.page)
+      console.log(this.items)
     },
     error => {});
   }
@@ -50,8 +57,8 @@ export class ProdutosPage implements OnInit {
     this.navCtrl.navigateRoot('/folder/components/categorias');
   }
 
-  carregarImagemUrls() {
-    for (var i=0; i<this.items.length; i++) {
+  carregarImagemUrls(inicio: number, fim: number) {
+    for (var i=inicio; i<fim; i++) {
       let item = this.items[i];
       this.produtoService.getImagemPequenaBucked(item.id) //pega o id do produto e procura uma small-image com msm id
         .subscribe(response => {
@@ -83,10 +90,26 @@ export class ProdutosPage implements OnInit {
 
 
   doRefresh(event) { //metodo para animacao qdo a pagina estiver carregando
+    this.page = 0;
+    this.items = [];
     this.carregarDados();
     setTimeout(() => {
       event.target.complete();
     }, 1000);
+  }
+
+  loadData(event) { //Metodo que carrega o infinit scroll
+    this.page++; 
+    this.carregarDados();
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+    }, 500);
+  }
+
+  toggleInfiniteScroll() {
+    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
   
 

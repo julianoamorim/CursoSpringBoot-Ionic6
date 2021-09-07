@@ -12,4 +12,17 @@
   <img [src]="cliente?.imageUrl || 'assets/imgs/avatar-blank.png'" class="circle">
   <h2 style="text-align: center">{{cliente?.nome}}</h2> <!-- ?:operador de navegacao segura, nao da erro caso n exista -->
   <p style="text-align: center">{{cliente?.email}}</p>
+
+  <ion-card>
+    <ion-card-header>
+      Enviar imagem de perfil
+    </ion-card-header>
+    <ion-item *ngIf="foto">
+      <img [src]="foto">
+    </ion-item>
+    <ion-item>
+      <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
+    </ion-item>
+  </ion-card>  
+
 </ion-content>

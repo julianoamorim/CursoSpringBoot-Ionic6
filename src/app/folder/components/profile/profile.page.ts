@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
 import { ClienteDTO } from 'src/models/cliente.dto';
@@ -13,12 +14,15 @@ import { StorageService } from 'src/services/storage.service';
 export class ProfilePage implements OnInit {
 
   cliente: ClienteDTO;
+  foto: string;
+  cameraOn: boolean = false;
 
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
     public storage: StorageService,
-    public clienteService: ClienteService
+    public clienteService: ClienteService,
+    public camera: Camera
     ) { }
 
 
@@ -50,6 +54,26 @@ export class ProfilePage implements OnInit {
       this.cliente.imageUrl = `${API_CONFIG.bucketAWSUrl}/cp${this.cliente.id}.jpg`;
     },
     error => {});
+  }
+
+  getCameraPicture(){
+    console.log("tirando foto...")
+    this.cameraOn = true;
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.PNG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     this.foto = 'data:image/png;base64,' + imageData;
+     this.cameraOn = false;
+    }, (err) => {
+     // Handle error
+    });
   }
 
 }

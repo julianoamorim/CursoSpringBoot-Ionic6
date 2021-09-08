@@ -27,6 +27,10 @@ export class ProfilePage implements OnInit {
 
 
   ngOnInit() { //funcoes carregadas junto com a pagina
+     this.carregarDados();
+  }
+
+  carregarDados(){
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
       this.clienteService.encontrarPorEmail(localUser.email)
@@ -43,8 +47,7 @@ export class ProfilePage implements OnInit {
     }
     else {
       this.navCtrl.navigateRoot('folder/components/home')
-    }    
-
+    }   
   }
   
 
@@ -74,6 +77,21 @@ export class ProfilePage implements OnInit {
     }, (err) => {
      // Handle error
     });
+  }
+
+  enviarFoto(){
+    this.clienteService.uploadFoto(this.foto)
+    .subscribe(resposta => {
+      this.foto = null;
+      this.carregarDados(); //recarrega a paniga novamente com a foto carregada
+    },
+    error => {
+    });
+
+  }
+
+  cancelar(){
+    this.foto = null;
   }
 
 }

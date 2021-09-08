@@ -20,9 +20,8 @@
     <ion-item *ngIf="foto">
       <img [src]="foto">
     </ion-item>
-    <ion-item>
-      <button ion-button block (click)="getCameraPicture()" [disabled]="cameraOn">Camera</button>
-    </ion-item>
   </ion-card>  
-
+  <ion-button expand="full" color="primary" (click)="getCameraPicture()" [disabled]="cameraOn">Camera</ion-button>
+  <ion-button  expand="full" *ngIf="foto" color="medium" (click)="enviarFoto()" >Enviar Imagem</ion-button>
+  <ion-button expand="full" *ngIf="foto" color="secondary" (click)="cancelar()" >Enviar Imagem</ion-button>
 </ion-content>

@@ -2,15 +2,17 @@ import { CartService } from 'src/services/domain/cart.service';
 import { LocalUser } from 'src/models/local_user';
 import { API_CONFIG } from './../config/api.config';
 import { Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { CredenciaisDTO } from 'src/models/credenciais.dto';
 import { StorageService } from './storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { HTTP } from '@ionic-native/http/ngx';
 
 //Funcao de Autenticacao das credenciais fornecidas no Frontend para o Backend
 @Injectable()
 export class AuthService{
 
+    requestObject : any = null;
     jwtHelper : JwtHelperService = new JwtHelperService(); //biblioteca que obtem o email atravez do token no frontend -> necessario instalar npm
 
     constructor(
@@ -23,16 +25,24 @@ export class AuthService{
         creds,
         {
             observe: 'response', //obtem acesso ao header
-            responseType: 'text' //evitar q exporte como JSON para o Spring
+            responseType: 'text', //evitar q exporte como JSON para o Spring
+            headers: new HttpHeaders({
+                'Access-Control-Allow-Origin': '*'
+            })
         });
+        
     }
 
     recarrecarToken(){ 
+
         return this.http.post(`${API_CONFIG.baseUrl}/auth/refresh_token`,
         {},
         {
             observe: 'response', //obtem acesso ao header
-            responseType: 'text' //evitar q exporte como JSON para o Spring
+            responseType: 'text', //evitar q exporte como JSON para o Spring
+            headers: new HttpHeaders({
+                'Access-Control-Allow-Origin': '*'
+            })
         });
     }
 

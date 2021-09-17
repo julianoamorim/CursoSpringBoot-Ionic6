@@ -1,6 +1,6 @@
 import { CredenciaisDTO } from './../../../../models/credenciais.dto';
 import { Component, OnInit } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular'; //controle de navegacao
+import { LoadingController, MenuController, NavController } from '@ionic/angular'; //controle de navegacao
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
@@ -18,7 +18,8 @@ export class HomePage implements OnInit {
 
   constructor(public navCtrl: NavController,
     public menu: MenuController,
-    public auth: AuthService) { }
+    public auth: AuthService,
+    public loadingCtrl: LoadingController) { }
 
    ionViewWillEnter() { //desabilita o Menu na tela Home
     this.menu.enable(false);
@@ -44,12 +45,24 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateRoot('folder/components/categorias'); //navega da home para categoria
     },
     error => {});
+    this.showLoader();
     
     //this.navCtrl.navigateForward('folder/components/categorias') //permite voltar para essa pagina
   }
 
   signup(){
     this.navCtrl.navigateRoot('folder/components/signup');
+  }
+
+  async showLoader(){ //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
+    const loading = await this.loadingCtrl.create({
+      cssClass: 'my-custom-class',
+      message: 'Aguarde...',
+      duration: 500
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
   }
 
   ngOnInit() {

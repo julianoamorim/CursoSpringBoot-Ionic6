@@ -26,7 +26,7 @@
     <ion-item *ngIf="grupoFormulario.value['@type'] == 'pagamentoComCartao'">
       <ion-label stacked>Parcelas no cartão</ion-label>
       <ion-select formControlName="numeroParcelas">
-        <ion-select-option *ngFor="let n of parcelas; first as f" [value]="n" [selected]="f">{{n}}</ion-select-option>
+        <ion-select-option *ngFor="let n of parcelas" [value]="n">{{n}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-button expand="full" type="submit" [disabled]="grupoFormulario.invalid">Próximo</ion-button>

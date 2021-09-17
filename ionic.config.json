@@ -2,7 +2,9 @@
   "name": "CursoSpringIonic",
   "integrations": {
     "cordova": {},
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    }
   },
   "type": "angular"
 }

@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { CredenciaisDTO } from 'src/models/credenciais.dto';
 import { StorageService } from './storage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { HTTP } from '@ionic-native/http/ngx';
 
 //Funcao de Autenticacao das credenciais fornecidas no Frontend para o Backend
 @Injectable()

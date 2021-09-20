@@ -44,15 +44,14 @@ export class HomePage implements OnInit {
     }
 
   login(){
-    
+    this.showLoader();
     this.auth.autenticado(this.creds)
     .subscribe(resposta => {
-      this.showLoader();
       this.auth.sucessoLogin(resposta.headers.get('Authorization')); //consegue pegar o token pelo header no backend no arquivo JWTFiltroAutenticacao
-      this.isLoading = false; //desabilita o loading apos a resposta HTTPS
       this.navCtrl.navigateRoot('folder/components/categorias'); //navega da home para categoria
     },
     error => {});
+    this.isLoading = false; //desabilita o loading apos a resposta HTTPS no showLoader()
     
     //this.navCtrl.navigateForward('folder/components/categorias') //permite voltar para essa pagina
   }
@@ -66,7 +65,7 @@ export class HomePage implements OnInit {
     const loading = await this.loadingCtrl.create({
       cssClass: 'my-custom-class',
       message: 'Aguarde...',
-      duration: 5000
+      duration: 20000
     });
     await loading.present().then(() => {
       console.log('carregando');

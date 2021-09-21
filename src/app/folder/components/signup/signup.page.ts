@@ -26,7 +26,9 @@ export class SignupPage implements OnInit {
     public estadoService: EstadoService,
     public clienteService: ClienteService,
     public alertCtrl: AlertController) { 
-
+    
+    
+    //Esta tendo erro ao acessar os "estados" no backend, necessario habilitar o HTTPS no Spring Boot, trabalhoso
     this.grupoFormulario = this.formBuilder.group({
       nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]], //valor inicial, valores validos
       email: ['joaquim@gmail.com', [Validators.required, Validators.email]],

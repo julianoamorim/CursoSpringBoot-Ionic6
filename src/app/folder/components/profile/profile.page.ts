@@ -65,8 +65,14 @@ export class ProfilePage implements OnInit {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      //corrige a orientacao da foto no celular
+      correctOrientation: true, 
+      cameraDirection: 1,
+      targetWidth: 720,
+      allowEdit: false,
+      saveToPhotoAlbum: false
     }
     
     this.camera.getPicture(options).then((imageData) => {
@@ -87,7 +93,12 @@ export class ProfilePage implements OnInit {
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 720,
+      correctOrientation: true, //corrige a orientacao da foto no celular
+      cameraDirection: 1,
+      allowEdit: true
+      
     }
     
     this.camera.getPicture(options).then((imageData) => {

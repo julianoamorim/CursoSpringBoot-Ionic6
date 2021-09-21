@@ -9,7 +9,9 @@
 </ion-header>
 
 <ion-content>
-  <img [src]="cliente?.imageUrl || 'assets/imgs/avatar-blank.png'" class="circle">
+  <ion-avatar>
+    <img [src]="cliente?.imageUrl || 'assets/imgs/avatar-blank.png'">
+  </ion-avatar>
   <h2 style="text-align: center">{{cliente?.nome}}</h2> <!-- ?:operador de navegacao segura, nao da erro caso n exista -->
   <p style="text-align: center">{{cliente?.email}}</p>
 

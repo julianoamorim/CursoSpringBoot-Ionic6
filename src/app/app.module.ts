@@ -16,7 +16,6 @@ import { AuthInterceptorProvider } from 'src/interceptors/auth-interceptor';
 import { ProdutoService } from 'src/services/domain/produto.service';
 import { CartService } from 'src/services/domain/cart.service';
 import { ImageUtilService } from 'src/services/image-util.service';
-import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   declarations: [AppComponent], //nao e declarada todas as paginas -> LazyLoading

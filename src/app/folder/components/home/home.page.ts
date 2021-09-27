@@ -2,8 +2,6 @@ import { CredenciaisDTO } from './../../../../models/credenciais.dto';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, MenuController, NavController } from '@ionic/angular'; //controle de navegacao
 import { AuthService } from 'src/services/auth.service';
-import { from, Observable } from 'rxjs';
-import { finalize, flatMap, tap } from 'rxjs/operators';
 
 
 @Component({

@@ -29,6 +29,7 @@
     "@ionic-native/core": "^5.36.0",
     "@ionic-native/file": "^5.36.0",
     "@ionic-native/http": "^5.36.0",
+    "@ionic-native/screenshot": "^4.20.0",
     "@ionic/angular": "^5.5.2",
     "cordova-plugin-advanced-http": "^3.2.1",
     "cordova-plugin-android-permissions": "^1.1.2",
@@ -54,6 +55,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
+    "com.darktalker.cordova.screenshot": "git+https://github.com/gitawego/cordova-screenshot.git",
     "cordova-android": "^10.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-androidx": "^3.0.0",
@@ -95,7 +97,8 @@
       "cordova-plugin-androidx-adapter": {},
       "cordova-plugin-http": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-android-permissions": {}
+      "cordova-plugin-android-permissions": {},
+      "com.darktalker.cordova.screenshot": {}
     },
     "platforms": [
       "browser",

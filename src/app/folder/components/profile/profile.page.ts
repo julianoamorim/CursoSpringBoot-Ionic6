@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { NavController, NavParams } from '@ionic/angular';
+import { LoadingController, NavController, NavParams } from '@ionic/angular';
 import { API_CONFIG } from 'src/config/api.config';
 import { ClienteDTO } from 'src/models/cliente.dto';
 import { ClienteService } from 'src/services/domain/cliente.service';
@@ -16,13 +16,15 @@ export class ProfilePage implements OnInit {
   cliente: ClienteDTO;
   foto: string;
   cameraOn: boolean = false;
+  isLoading: boolean = false; //variavel para verificar se a pagina esta carregando ou nao
 
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
     public storage: StorageService,
     public clienteService: ClienteService,
-    public camera: Camera
+    public camera: Camera,
+    public loadingCtrl: LoadingController
     ) { }
 
 
@@ -47,7 +49,7 @@ export class ProfilePage implements OnInit {
     }
     else {
       this.navCtrl.navigateRoot('folder/components/home')
-    }   
+    } 
   }
   
 
@@ -79,13 +81,13 @@ export class ProfilePage implements OnInit {
      // imageData is either a base64 encoded string or a file URI
      // If it's base64 (DATA_URL):
      this.foto = 'data:image/png;base64,' + imageData;
-     this.cameraOn = false;
     }, (err) => {
         this.cameraOn = false;
     });
   }
 
   getFotoGaleria(){
+    this.showLoader();
     console.log("tirando foto...")
     this.cameraOn = true;
     const options: CameraOptions = {
@@ -105,13 +107,15 @@ export class ProfilePage implements OnInit {
      // imageData is either a base64 encoded string or a file URI
      // If it's base64 (DATA_URL):
      this.foto = 'data:image/png;base64,' + imageData;
-     this.cameraOn = false;
+     
     }, (err) => {
       this.cameraOn = false;
     });
+    this.isLoading = false;
   }
 
   enviarFoto(){
+    this.showLoader();
     this.clienteService.uploadFoto(this.foto)
     .subscribe(resposta => {
       this.foto = null;
@@ -119,11 +123,27 @@ export class ProfilePage implements OnInit {
     },
     error => {
     });
+    this.cameraOn = false;
 
   }
 
   cancelar(){
     this.foto = null;
+    this.cameraOn = false;
+  }
+
+  async showLoader(){ //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
+    this.isLoading = true;
+    const loading = await this.loadingCtrl.create({
+      cssClass: 'my-custom-class',
+      message: 'Aguarde...',
+      duration: 20000
+    });
+    await loading.present().then(() => {
+      console.log('carregando');
+      if(!this.isLoading)
+        loading.dismiss().then(() => console.log('Dismiss'))
+    })
   }
 
 }

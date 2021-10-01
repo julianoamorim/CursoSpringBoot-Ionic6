@@ -1,0 +1,1 @@
+(self.webpackChunkcursosprinonic=self.webpackChunkcursosprinonic||[]).push([[4997],{4997:(e,r,c)=>{"use strict";c.r(r),c.d(r,{FolderPageModule:()=>i});var n=c(1116),s=c(8809),o=c(2355),u=c(8619);let i=(()=>{class e{}return e.\u0275fac=function(r){return new(r||e)},e.\u0275mod=u.oAB({type:e}),e.\u0275inj=u.cJS({imports:[[n.ez,s.Pc,o.C]]}),e})()}}]);

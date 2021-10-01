@@ -17,14 +17,15 @@
 
   <ion-card>
     <ion-card-header>
-      Enviar imagem de perfil
+      <ion-card-title class="card-header">Enviar imagem de perfil</ion-card-title>
     </ion-card-header>
     <ion-item *ngIf="foto">
       <img [src]="foto">
     </ion-item>
+    <ion-button expand="full" color="primary" (click)="getFotoCamera()"  *ngIf="!foto">Camera</ion-button>
+    <ion-button expand="full" color="secondary" (click)="getFotoGaleria()"  *ngIf="!foto">Galeria</ion-button>
+    <ion-button  expand="full" *ngIf="foto" color="medium" (click)="enviarFoto()" >Enviar Imagem</ion-button>
+    <ion-button expand="full" *ngIf="foto" color="secondary" (click)="cancelar()" >Cancelar</ion-button>
   </ion-card>  
-  <ion-button expand="full" color="primary" (click)="getFotoCamera()" [disabled]="cameraOn">Camera</ion-button>
-  <ion-button expand="full" color="secondary" (click)="getFotoGaleria()" [disabled]="cameraOn">Galeria</ion-button>
-  <ion-button  expand="full" *ngIf="foto" color="medium" (click)="enviarFoto()" >Enviar Imagem</ion-button>
-  <ion-button expand="full" *ngIf="foto" color="secondary" (click)="cancelar()" >Cancelar</ion-button>
+  
 </ion-content>

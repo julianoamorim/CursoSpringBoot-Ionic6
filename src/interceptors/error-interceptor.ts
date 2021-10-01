@@ -87,7 +87,7 @@ export class ErrorInterceptor implements HttpInterceptor{
         await alert.present();
     }
 
-    async handleDefaultError(erroObj){
+    async handleDefaultError(erroObj){ //filtra todos os erros HTTP do frontend e exibe um alerta na tela
         const alert = await this.alertCtrl.create({
             header: 'Erro ' +erroObj.status+ ': ' +erroObj.error,
             message: erroObj.message,

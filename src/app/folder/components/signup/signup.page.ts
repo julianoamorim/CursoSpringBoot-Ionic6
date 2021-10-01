@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController, NavParams } from '@ionic/angular';
+import { AlertController, LoadingController, NavController, NavParams, MenuController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { CidadeService } from 'src/services/domain/cidade.service';
 import { EstadoService } from 'src/services/domain/estado.service';
@@ -25,16 +25,18 @@ export class SignupPage implements OnInit {
     public cidadeService: CidadeService,
     public estadoService: EstadoService,
     public clienteService: ClienteService,
-    public alertCtrl: AlertController) { 
+    public alertCtrl: AlertController,
+    public loadingCtrl: LoadingController,
+    public menu: MenuController) { 
     
     
     //Esta tendo erro ao acessar os "estados" no backend, necessario habilitar o HTTPS no Spring Boot, trabalhoso
     this.grupoFormulario = this.formBuilder.group({
-      nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]], //valor inicial, valores validos
-      email: ['joaquim@gmail.com', [Validators.required, Validators.email]],
+      nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]], //valor inicial, valores validos
+      email: ['', [Validators.required, Validators.email]],
       tipo : ['1', [Validators.required]],
       cpfOuCnpj : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
-      senha : ['123', [Validators.required]],
+      senha : ['', [Validators.required]],
       logradouro : ['Rua Via', [Validators.required]],
       numero : ['25', [Validators.required]],
       complemento : ['Apto 3', []],
@@ -48,7 +50,18 @@ export class SignupPage implements OnInit {
     });
   }
 
+  isLoading: boolean = false; //variavel para verificar se a pagina esta carregando ou nao
+
+  ionViewWillEnter() { //desabilita o Menu na tela de Cadastro
+    this.menu.swipeGesture(false);
+    }
+
+  ionViewDidLeave() { //habilita o Menu na tela de Cadastro
+    this.menu.swipeGesture(true);
+    }
+
   ngOnInit() {
+
     this.estadoService.encontrarTodos()
     .subscribe(resposta => {
       this.estados = resposta;
@@ -58,15 +71,18 @@ export class SignupPage implements OnInit {
   }
 
   updateCidades(){
-    let estado_id = this.grupoFormulario.value.estadoId;
-    this.cidadeService.encontrarTodos(estado_id)
-    .subscribe(response => {
-      this.cidades = response;
-      this.grupoFormulario.controls.cidadeId.setValue(null); //tira a seleçao da caixa da cidade selecionada
-    }, error =>{})
+    let estado_id = this.grupoFormulario.value.estadoId
+    if(estado_id!=null){ //corrige o alerta na tela de estado null
+      this.cidadeService.encontrarTodos(estado_id)
+      .subscribe(response => {
+        this.cidades = response;
+        this.grupoFormulario.controls.cidadeId.setValue(null); //tira a seleçao da caixa da cidade selecionada
+      }, error =>{})
+    }
   }
 
-  signupUser(){
+  cadastrarUsuario(){
+    this.showLoader();
     this.clienteService.inserir(this.grupoFormulario.value)
     .subscribe(response => {
       this.showInsertOk();
@@ -78,7 +94,7 @@ export class SignupPage implements OnInit {
   async showInsertOk(){ //mostra uma msg na tela informando sobre o cadastro
     const alert = await this.alertCtrl.create({
       header: 'Sucesso!',
-      message: 'Cadastro efetuado com sucesso',
+      message: 'Cadastro efetuado com sucesso!\n Verifique seu email!',
       backdropDismiss: false, // p fechar e necessario clicar na msg
       buttons: [{
         text: 'Ok',
@@ -88,6 +104,20 @@ export class SignupPage implements OnInit {
       }]
     });
     await alert.present();
+  }
+
+  async showLoader(){ //metodo usado em requisicoes q podem demorar, gerando a tela de Loading...
+    this.isLoading = true;
+    const loading = await this.loadingCtrl.create({
+      cssClass: 'my-custom-class',
+      message: 'Enviando Email!   Aguarde...',
+      duration: 2000
+    });
+    await loading.present().then(() => {
+      console.log('carregando');
+      if(!this.isLoading)
+        loading.dismiss().then(() => console.log('Dismiss'))
+    })
   }
 
 }

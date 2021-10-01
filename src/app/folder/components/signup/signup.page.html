@@ -1,12 +1,16 @@
-<ion-header>
+<!-- Barra superiro do Menu -->
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button> <!-- botao de voltar, colocar o nome da pagina, n e necessario criar funcao --> 
+    </ion-buttons>
+    <ion-title>Cadastrar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <!-- tirado diretamente do GitHub do curso, n foi explicado -->
 <ion-content padding>
-  <form [formGroup]="grupoFormulario" (ngSubmit)="signupUser(); $event.preventDefault()">
+  <form [formGroup]="grupoFormulario" (ngSubmit)="cadastrarUsuario(); $event.preventDefault()">
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
@@ -19,7 +23,7 @@
     <p class="danger" *ngIf="grupoFormulario.controls.email.dirty && grupoFormulario.controls.email.errors" margin-left>Valor inválido</p>
     <ion-radio-group formControlName="tipo">
       <ion-list-header>
-        Tipo de cliente
+        <h3>Tipo de cliente:</h3>
       </ion-list-header>
       <ion-item>
         <ion-label>Pessoa física</ion-label>

@@ -1,0 +1,229 @@
+-- Merging decision tree log ---
+provider#org.apache.cordova.camera.FileProvider
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:12:9-14:20
+	android:grantUriPermissions
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:12:114-148
+	android:authorities
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:12:19-88
+	android:exported
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:12:89-113
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:12:149-202
+manifest
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+MERGED from [:CordovaLib] D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\CordovaLib\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:1-27:12
+MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\88a490903787e53e545ff1ce21c3b715\transformed\appcompat-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\julia\.gradle\caches\transforms-3\74a2a5779e91fe710a52efc979e466e9\transformed\fragment-1.3.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.3] C:\Users\julia\.gradle\caches\transforms-3\8d52a31dcd781c14226c0c659275e26e\transformed\jetified-activity-1.2.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\a4947fd1d232a5a0f05a05b0c1f48370\transformed\jetified-appcompat-resources-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\b0fa449e36ca9600a1ba046bda8c53e0\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\julia\.gradle\caches\transforms-3\7f44dd75ab945586126fa4a3b146dae4\transformed\webkit-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\8c89200292767dcd7cbd8c11b51880c7\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\9b4d07ac9ca6609b841011db3b7b6aa6\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\ec7fdbf1a7db72446f3d7162ef8087f3\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\66a40fe582223168660dc82902fa21dc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\70d5eb6f75699db1aa7aa56770e531a7\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\e7dd77c39729e1c26f248e03e3bffae4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\6ddfffa481a17226c05677edef594f88\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\8b32ff63bcc6c294f97deb950ded1fd5\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\eee73b55b94f67abde6ce142af7697ab\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\a6f3ef45aeef4e8e28c4d7f5e8d9f50e\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\julia\.gradle\caches\transforms-3\15c89727927385bf830c6a952432f3cc\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\d9ab6a1fe247d4646a04fbd2450fba09\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\julia\.gradle\caches\transforms-3\9a14df2f9ec1a38f5c3d72030b95e71f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\01e4886290b2e7130c7eab2b933a13d4\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\julia\.gradle\caches\transforms-3\324c73acd9b2e909f88f4b9ef940321f\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\38cf8237ffef9f8262b97933a8502d98\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\85768f02eafb8c8b483de9453625bb3c\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+	package
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:98-148
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:70-97
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
+	xmlns:android
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:149-207
+	android:versionCode
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:2:46-69
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+supports-screens
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:5-15:19
+MERGED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\julia\.gradle\caches\transforms-3\15c89727927385bf830c6a952432f3cc\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\julia\.gradle\caches\transforms-3\15c89727927385bf830c6a952432f3cc\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:182-208
+	android:label
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:88-120
+	android:hardwareAccelerated
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
+	android:icon
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:53-87
+	android:networkSecurityConfig
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:5:121-181
+activity#com.julianoamorim.cursospringbootionic15.MainActivity
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
+	android:label
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:136-173
+	android:launchMode
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:174-204
+	android:windowSoftInputMode
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:284-326
+	android:configChanges
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:19-135
+	android:theme
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:233-283
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:6:205-232
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
+	android:label
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
+action#android.intent.action.MAIN
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:16:22-78
+queries
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:17:5-31:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:18:9-20:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:19:13-73
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:19:21-70
+intent#action:name:android.intent.action.GET_CONTENT
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:21:9-23:18
+action#android.intent.action.GET_CONTENT
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:22:13-72
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:22:21-69
+intent#action:name:android.intent.action.PICK
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:24:9-26:18
+action#android.intent.action.PICK
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:25:21-62
+intent#action:name:com.android.camera.action.CROP+data:mimeType:image/*+data:scheme:content
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:27:9-30:18
+action#com.android.camera.action.CROP
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:28:13-69
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:28:21-66
+data
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:29:13-73
+	android:scheme
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:29:46-70
+	android:mimeType
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:29:19-45
+uses-sdk
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+MERGED from [:CordovaLib] D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\CordovaLib\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\CordovaLib\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:5-44
+MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\88a490903787e53e545ff1ce21c3b715\transformed\appcompat-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\88a490903787e53e545ff1ce21c3b715\transformed\appcompat-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\julia\.gradle\caches\transforms-3\74a2a5779e91fe710a52efc979e466e9\transformed\fragment-1.3.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\julia\.gradle\caches\transforms-3\74a2a5779e91fe710a52efc979e466e9\transformed\fragment-1.3.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] C:\Users\julia\.gradle\caches\transforms-3\8d52a31dcd781c14226c0c659275e26e\transformed\jetified-activity-1.2.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] C:\Users\julia\.gradle\caches\transforms-3\8d52a31dcd781c14226c0c659275e26e\transformed\jetified-activity-1.2.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\a4947fd1d232a5a0f05a05b0c1f48370\transformed\jetified-appcompat-resources-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.0] C:\Users\julia\.gradle\caches\transforms-3\a4947fd1d232a5a0f05a05b0c1f48370\transformed\jetified-appcompat-resources-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\b0fa449e36ca9600a1ba046bda8c53e0\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\b0fa449e36ca9600a1ba046bda8c53e0\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\julia\.gradle\caches\transforms-3\7f44dd75ab945586126fa4a3b146dae4\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] C:\Users\julia\.gradle\caches\transforms-3\7f44dd75ab945586126fa4a3b146dae4\transformed\webkit-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\8c89200292767dcd7cbd8c11b51880c7\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\8c89200292767dcd7cbd8c11b51880c7\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\9b4d07ac9ca6609b841011db3b7b6aa6\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\9b4d07ac9ca6609b841011db3b7b6aa6\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\ec7fdbf1a7db72446f3d7162ef8087f3\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\ec7fdbf1a7db72446f3d7162ef8087f3\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\66a40fe582223168660dc82902fa21dc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\66a40fe582223168660dc82902fa21dc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\70d5eb6f75699db1aa7aa56770e531a7\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\70d5eb6f75699db1aa7aa56770e531a7\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] C:\Users\julia\.gradle\caches\transforms-3\3650d9fd6c33a0b5441d6cece477ebd3\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\e7dd77c39729e1c26f248e03e3bffae4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\e7dd77c39729e1c26f248e03e3bffae4\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\6ddfffa481a17226c05677edef594f88\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\6ddfffa481a17226c05677edef594f88\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\8b32ff63bcc6c294f97deb950ded1fd5\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\8b32ff63bcc6c294f97deb950ded1fd5\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\eee73b55b94f67abde6ce142af7697ab\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\eee73b55b94f67abde6ce142af7697ab\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\a6f3ef45aeef4e8e28c4d7f5e8d9f50e\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\a6f3ef45aeef4e8e28c4d7f5e8d9f50e\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\julia\.gradle\caches\transforms-3\15c89727927385bf830c6a952432f3cc\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\julia\.gradle\caches\transforms-3\15c89727927385bf830c6a952432f3cc\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\d9ab6a1fe247d4646a04fbd2450fba09\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\d9ab6a1fe247d4646a04fbd2450fba09\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\julia\.gradle\caches\transforms-3\9a14df2f9ec1a38f5c3d72030b95e71f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\julia\.gradle\caches\transforms-3\9a14df2f9ec1a38f5c3d72030b95e71f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\01e4886290b2e7130c7eab2b933a13d4\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\julia\.gradle\caches\transforms-3\01e4886290b2e7130c7eab2b933a13d4\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\julia\.gradle\caches\transforms-3\324c73acd9b2e909f88f4b9ef940321f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\julia\.gradle\caches\transforms-3\324c73acd9b2e909f88f4b9ef940321f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\38cf8237ffef9f8262b97933a8502d98\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\julia\.gradle\caches\transforms-3\38cf8237ffef9f8262b97933a8502d98\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\85768f02eafb8c8b483de9453625bb3c\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\julia\.gradle\caches\transforms-3\85768f02eafb8c8b483de9453625bb3c\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:13:13-123
+	android:resource
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:13:75-120
+	android:name
+		ADDED from D:\Documentos\Tecnologia Informacao\VSCodeWorkspace\Projeto_Ionic\CursoSpringIonic\platforms\android\app\src\main\AndroidManifest.xml:13:24-74

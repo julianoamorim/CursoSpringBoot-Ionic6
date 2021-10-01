@@ -1,5 +1,6 @@
 import { HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { LoadingController } from "@ionic/angular";
 import { Observable} from "rxjs"; //Esse modulo nao consegue pegar o error http da requisicao
 import { API_CONFIG } from "src/config/api.config";
 import { ClienteDTO } from "src/models/cliente.dto";
@@ -13,6 +14,8 @@ export class ClienteService{
         public http: HttpClient,
         public storage: StorageService,
         public imageUtilService: ImageUtilService){ }
+    
+    isLoading: boolean = false; //variavel para verificar se a pagina esta carregando ou nao
 
     encontrarPorEmail(email: string) {
 

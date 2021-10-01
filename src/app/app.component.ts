@@ -11,13 +11,12 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Perfil', url: '/folder/components/profile', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     { title: 'Logout', url: '/folder/components/home', icon: 'log-out'},
     { title: 'Categorias', url: '/folder/components/categorias', icon: 'archive' },
     { title: 'Carrinho', url: '/folder/components/carrinho', icon: "cart" },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Sobre', url: '/folder/Sobre', icon: 'warning' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(public auth: AuthService, public navCtrl: NavController) {}
 

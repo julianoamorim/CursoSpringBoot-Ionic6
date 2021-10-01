@@ -53,10 +53,6 @@ export class ProdutosPage implements OnInit {
     error => {});
   }
 
-  voltar(){
-    this.navCtrl.navigateRoot('/folder/components/categorias');
-  }
-
   carregarImagemUrls(inicio: number, fim: number) {
     for (var i=inicio; i<fim; i++) {
       let item = this.items[i];

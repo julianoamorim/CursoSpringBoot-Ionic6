@@ -5,4 +5,5 @@
   - SDK 30 / Build-Tools 30.0.3 
   - Hospedagem do BackEnd no Heroku e imagens no Bucket AWS
 - Sistema disponivel também como página HTML https://julianoamorim.github.io/CursoSpringBoot-Ionic6
+  - Uso de câmera está desativado pela falta do Cordova
 
